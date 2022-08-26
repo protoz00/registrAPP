@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido/a "nombre"</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="">
+  <div id="container">
+      <div class="card">
+        <form action="" class="card-form">
+            <ion-accordion-group>
+              <ion-accordion value="first">
+                <ion-item slot="header" color="light">
+                  <ion-label>Programación BD</ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content">
+                Seccion - 003D
+                </div>
+                <div class="ion-padding" slot="content">
+                  Seccion - 005D
+                </div>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="light">
+                <ion-label>Programacion de escritorio</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Seccion - 001D
+              </div>
+              <div class="ion-padding" slot="content">
+                Seccion - 003D
+              </div>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Arquitectura</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Seccion - 009D
+              </div>
+              <div class="ion-padding" slot="content">
+                Seccion - 008D
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </form>
+    </div>
+  </div>
+</ion-content>

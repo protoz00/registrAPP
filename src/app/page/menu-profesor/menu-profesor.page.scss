@@ -1,0 +1,19 @@
+ion-content.background{
+
+    --background: url(../../../assets/img/poster_5.jpg) 0/100% 100%;
+    background-size: cover;
+    width: auto;
+    height: auto;
+  }
+
+  .card {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 425px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(#999, .25);
+    padding: .75rem;
+}
