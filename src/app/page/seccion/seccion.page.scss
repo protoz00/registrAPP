@@ -1,12 +1,4 @@
-ion-content.background{
-
-    --background: url(../../../assets/img/Poster_7.jpg) 0/100% 100%;
-    background-size: cover;
-    width: auto;
-    height: auto;
-  }
-
-  .card {
+.card {
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
@@ -38,6 +30,3 @@ ion-content.background{
       outline: 0;
   }
 }
-
-
-  

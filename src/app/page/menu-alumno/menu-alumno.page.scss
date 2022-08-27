@@ -1,7 +1,7 @@
 ion-content.background{
 
-    --background: url(../../../assets/img/poster_5.jpg) 0/100% 100%;
-    background-size: cover;
+    --background: url(../../../assets/img/Poster_7.jpg) 0/100% 100%;
+    background-size: auto;
     width: auto;
     height: auto;
   }
@@ -17,3 +17,29 @@ ion-content.background{
     box-shadow: 0 10px 20px 0 rgba(#999, .25);
     padding: .75rem;
 }
+
+
+
+.action {
+  margin-top: 2rem;
+}
+
+.action-button {
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 1em;
+  width: 100%;
+  font-weight: 500;
+  background-color: rgba(224, 190, 76, 0.968);
+  border-radius: 6px;
+  color: rgb(255, 254, 254);
+  border: 0;
+  &:focus {
+      outline: 0;
+  }
+}
+
+
+
+
+

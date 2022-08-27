@@ -1,7 +1,7 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title>Inicio Sesión</ion-title>
+      <ion-title><ion-button color="warning" shape="round">Iniciar Sesión</ion-button></ion-title>
       <ion-button slot="end" color="transparent" [routerLink]="['/home']">volver</ion-button>
     </ion-toolbar>
   </ion-header>
@@ -45,7 +45,7 @@
               <label class="input-label">Contraseña: </label>
           </div>
           <div class="action">
-              <button class="action-button" >Iniciar Sesión</button>
+              <button class="action-button" [routerLink]="['/menu-alumno']" >Iniciar Sesión</button>
           </div>
       </form>
       <div class="card-info">

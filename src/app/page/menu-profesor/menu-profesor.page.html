@@ -1,49 +1,92 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Bienvenido/a "nombre"</ion-title>
+    <ion-button slot="end" color="transparent" [routerLink]="['/pagina1']">volver</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="">
   <div id="container">
       <div class="card">
-        <form action="" class="card-form">
-            <ion-accordion-group>
-              <ion-accordion value="first">
+        
+        <ion-card>
+          <ion-card-header style="text-align: center;" color="light"><h4>Tus Cursos</h4></ion-card-header>
+          <form action="" class="card-form">
+              <ion-accordion-group>
+                <ion-accordion value="first">
+                  <ion-item slot="header" color="light">
+                    <ion-label>Programación BD</ion-label>
+                  </ion-item>
+                  <div class="ion-padding" slot="content">
+                    <ion-button expand="block" fill="outline" color="dark" [routerLink]="['/seccion']" >Sección 003</ion-button>
+                  </div>
+                  <div class="ion-padding" slot="content">
+                    <ion-button expand="block" fill="outline" color="dark">Sección 005</ion-button>
+                  </div>
+
+              </ion-accordion>
+              <ion-accordion value="second">
                 <ion-item slot="header" color="light">
-                  <ion-label>Programación BD</ion-label>
+                  <ion-label>Programación de escritorio</ion-label>
                 </ion-item>
                 <div class="ion-padding" slot="content">
-                Seccion - 003D
+                  <ion-button expand="block" fill="outline" color="dark">Sección 001</ion-button>
                 </div>
                 <div class="ion-padding" slot="content">
-                  Seccion - 005D
+                  <ion-button expand="block" fill="outline" color="dark">Sección 004</ion-button>
                 </div>
-            </ion-accordion>
-            <ion-accordion value="second">
-              <ion-item slot="header" color="light">
-                <ion-label>Programacion de escritorio</ion-label>
-              </ion-item>
-              <div class="ion-padding" slot="content">
-                Seccion - 001D
-              </div>
-              <div class="ion-padding" slot="content">
-                Seccion - 003D
-              </div>
-            </ion-accordion>
-            <ion-accordion value="third">
-              <ion-item slot="header" color="light">
-                <ion-label>Arquitectura</ion-label>
-              </ion-item>
-              <div class="ion-padding" slot="content">
-                Seccion - 009D
-              </div>
-              <div class="ion-padding" slot="content">
-                Seccion - 008D
-              </div>
-            </ion-accordion>
-          </ion-accordion-group>
-        </form>
+              </ion-accordion>
+              <ion-accordion value="third">
+                <ion-item slot="header" color="light">
+                  <ion-label>Arquitectura</ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content">
+                  <ion-button expand="block" fill="outline" color="dark">Sección 008</ion-button>
+                </div>
+                <div class="ion-padding" slot="content">
+                  <ion-button expand="block" fill="outline" color="dark">Sección 009</ion-button>
+                </div>
+              </ion-accordion>
+            </ion-accordion-group>
+          </form>
+        </ion-card>
     </div>
   </div>
 </ion-content>
+
+
+
+<!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<section class="hero-section">
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </a>
+  <div>
+</section>-->

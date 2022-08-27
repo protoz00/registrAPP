@@ -1,5 +1,7 @@
 {
   "name": "apli",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

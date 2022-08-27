@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'menu-profesor',
     loadChildren: () => import('./page/menu-profesor/menu-profesor.module').then( m => m.MenuProfesorPageModule)
   },
+  {
+    path: 'seccion',
+    loadChildren: () => import('./page/seccion/seccion.module').then( m => m.SeccionPageModule)
+  },
+
 
 
 ];
