@@ -27,6 +27,28 @@ const routes: Routes = [
     path: 'seccion',
     loadChildren: () => import('./page/seccion/seccion.module').then( m => m.SeccionPageModule)
   },
+  {
+    path: 'camara',
+    loadChildren: () => import('./page/camara/camara.module').then( m => m.CamaraPageModule)
+  },
+  {
+    path: 'lista-alumnos',
+    loadChildren: () => import('./page/lista-alumnos/lista-alumnos.module').then( m => m.ListaAlumnosPageModule)
+  },
+  {
+    path: 'codigo-qr',
+    loadChildren: () => import('./page/codigo-qr/codigo-qr.module').then( m => m.CodigoQrPageModule)
+  },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./page/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+  },
+  {
+    path: 'modif-asistencia',
+    loadChildren: () => import('./page/modif-asistencia/modif-asistencia.module').then( m => m.ModifAsistenciaPageModule)
+  },
+
+ 
 
 
 

@@ -6,11 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="">
+<ion-content [fullscreen]="true" class="background">
   <div id="container">
     <div class="card">
         <ion-card>
-
           <ion-card-header style="text-align:center ;" color="light"><h4>Tus Clases</h4></ion-card-header>
           <form action="" class="card-form">
               <ion-accordion-group>
@@ -47,6 +46,7 @@
                 </div>
                 <div class="ion-padding" slot="content">
                   <ion-button expand="block" fill="outline" color="dark">Asistencia: 4</ion-button>
+                  
                 </div>
               </ion-accordion>
             </ion-accordion-group>
@@ -54,7 +54,8 @@
         </ion-card>
   </div>
   <div>
-    <ion-button shape="round" expand="block" fill="outline" color="dark" style="padding-left: 20%; padding-right: 20%;">Unirse a clase</ion-button>
+    <ion-button shape="round" [routerLink]="['/camara']" expand="block" fill="outline" color="dark" style="padding-left: 20%; padding-right: 20%;">Unirse a clase</ion-button>
+    
   </div>
 </div>
 

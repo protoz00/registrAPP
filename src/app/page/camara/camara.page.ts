@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
-
-
 @Component({
-  selector: 'app-menu-alumno',
-  templateUrl: './menu-alumno.page.html',
-  styleUrls: ['./menu-alumno.page.scss'],
+  selector: 'app-camara',
+  templateUrl: './camara.page.html',
+  styleUrls: ['./camara.page.scss'],
   providers: [Camera]
 })
-export class MenuAlumnoPage implements OnInit {
+export class CamaraPage implements OnInit {
 
-    image:string;
+  image:string
 
   constructor(private camera: Camera) { }
 
   ngOnInit() {
+    
   }
 
   opencam(){
@@ -32,8 +31,6 @@ export class MenuAlumnoPage implements OnInit {
       // Handle error
       console.log(err);
      });
-  
-  
-}
 
+}
 }

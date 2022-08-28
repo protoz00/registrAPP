@@ -1,12 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sección</ion-title>
+    <ion-title>SECCIÓN</ion-title>
     <ion-button slot="end" color="transparent" [routerLink]="['/home']">volver</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
-
+ <div class="card">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Sección 003</ion-card-subtitle>
+      <ion-card-title>Programacion BD</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-accordion-group #accordionGroup>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Seleccione...</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content"><ion-button expand="block" fill="outline" color="dark" [routerLink]="['/codigo-qr']" >Iniciar Clase</ion-button></div>
+              <div class="ion-padding" slot="content"><ion-button expand="block" fill="outline" color="dark" [routerLink]="['/lista-alumnos']" >Listado de Alumnos</ion-button></div>
+              <div class="ion-padding" slot="content"><ion-button expand="block" fill="outline" color="dark" [routerLink]="['/asistencia']" >Asistencia</ion-button></div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+ </div>
 </ion-content>
