@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>agregar-curso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="">Nombre curso</ion-label>
+    <ion-input [(ngModel)]="curso.nombre_curso"></ion-input>
+  </ion-item>
+
+<ion-item>
+  <ion-label position="">carrera:</ion-label>
+  <ion-input [(ngModel)]="curso.carrera"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="">alias:</ion-label>
+  <ion-input [(ngModel)]="curso.alias"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-button (click)="agregar()">Grabar</ion-button>
+  <ion-button [routerLink]="['/home']">Volver</ion-button>
+  <ion-button (click)="limpiar()" >limpiar</ion-button>
+</ion-item>
+</ion-content>

@@ -1,0 +1,54 @@
+
+<ion-header>
+  <ng-container *ngFor = "let alumno of lista_alumno">
+  <ion-toolbar *ngIf="alumno.correo == datos.correo">
+    <ion-title>Bienvenido/a {{alumno.nombre}} {{alumno.apellido}}</ion-title>
+    <ion-button slot="end" color="transparent" [routerLink]="['/home']">volver</ion-button>
+  </ion-toolbar>
+  </ng-container> 
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background">
+  <div id="container">
+    <div class="card">
+        <ion-card>
+          <ion-card-header style="text-align:center ;" color="light"><h4>Tus Clases</h4></ion-card-header>
+          <form action="" class="card-form">
+
+              <ion-accordion-group *ngFor="let curso of lista_curso">
+                  <ng-container *ngFor="let seccion of lista_seccion">
+                    <ion-accordion value="first" *ngFor="let alumno of lista_alumno">
+                      <ion-item slot="header" color="light" *ngIf="alumno.id == seccion.id_alumno && alumno.correo == datos.correo && curso.id == seccion.id_curso">
+                        <ion-label>{{curso.alias}} {{seccion.nombre}}</ion-label>
+                        <ion-label slot="end"></ion-label>
+                      </ion-item>
+                      <ng-container *ngIf ="alumno.id == seccion.id_alumno && alumno.correo == datos.correo && curso.id == seccion.id_curso" >
+                      <div class="ion-padding" slot="content">
+                        <ion-button expand="block" fill="outline" color="dark">Porcentaje de Asistencia: 80%</ion-button>
+                      </div>
+                      <div class="ion-padding" slot="content">
+                        <ion-button expand="block" fill="outline" color="dark">Asistencia: 8</ion-button>
+                      </div>
+                    </ng-container>
+                    </ion-accordion>
+                  
+                  </ng-container>
+               
+              </ion-accordion-group>
+          </form>
+        </ion-card>
+  </div>
+  <div>
+    <ion-button shape="round" [routerLink]="['/camara']" expand="block" fill="outline" color="dark" style="padding-left: 20%; padding-right: 20%;">Unirse a clase</ion-button>
+  </div>
+  <div>
+    <ion-button shape="round" [routerLink]="['/pagina1']" expand="block" fill="outline" color="success" style="padding-left: 20%; padding-right: 20%; margin-top: 15px;">Cerrar Sesión</ion-button>
+  </div>
+</div>
+
+
+
+
+</ion-content>
+
+

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="qrcodeImage justify-content-center pt-5">
+    <qrcode
+    [qrdata]="myAngularxQrCode"
+    [allowEmptyString]="true"
+    [ariaLabel]="'QR Code image with the following content...'"
+    [cssClass]="'center'"
+    [colorDark]="'#000000ff'"
+    [colorLight]="'#ffffffff'"
+    [elementType]="'canvas'"
+    [errorCorrectionLevel]="'M'"
+    
+    [imageHeight]="75"
+    [imageWidth]="75"
+    [margin]="4"
+    [scale]="1"
+    [title]="'A custom title attribute'"
+    [width]="300"
+  ></qrcode>
+  </div>
+  <div class="">
+    <ion-item>
+      <ion-input  [(ngModel)]="myAngularxQrCode"></ion-input>
+    </ion-item>
+  </div>
+  
+</ion-content>

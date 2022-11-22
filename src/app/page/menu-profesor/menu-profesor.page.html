@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ng-container *ngFor = 'let profesor of lista_profesor' >
+    <ion-title *ngIf="profesor.correo == datos.correo">Bienvenido/a {{profesor.nombre}}</ion-title>
+    </ng-container >
+    <ion-button slot="end" color="transparent" [routerLink]="['/pagina1']">volver</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background">
+  <div id="container">
+      <div class="card">
+        <ion-card>
+          <ion-card-header style="text-align: center;" color="light"><h4>Tus Cursos</h4></ion-card-header>
+          <form action="" class="card-form">
+              <ion-accordion-group *ngFor="let curso of lista_curso">
+                <ng-container *ngFor="let profesor of lista_profesor">
+                  <ng-container *ngFor="let seccion of lista_seccion"> 
+                    <ng-container *ngIf="curso.id == seccion.id_curso && profesor.correo == datos.correo && seccion.id_profesor == profesor.id">
+                
+                    <ion-accordion value="" >
+                      
+                        <ion-item slot="header" color="light" >
+                            <ion-label  > {{curso.alias}} </ion-label>
+                            <ion-label  slot="end"  > {{curso.nombre_curso}} </ion-label>
+                        </ion-item>
+                      
+                        <div class="ion-padding" slot="content" *ngIf="profesor.id == seccion.id_profesor"  >
+                          <ion-button  expand="block" fill="outline" color="dark" (click)="la_seccion(curso.nombre_curso,seccion.nombre,curso.alias)" >{{seccion.nombre}}</ion-button>
+                          <!-- (click)="seccion(curso.nombre_curso,seccion.nombre,curso.alias)" -->
+                        </div>
+                      
+                    </ion-accordion>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </ion-accordion-group>
+          </form>
+        </ion-card>
+        <div>
+          <ion-button shape="round" [routerLink]="['/pagina1']" expand="block" fill="outline" color="success" style="padding-left: 20%; padding-right: 20%;">Cerrar Sesión</ion-button>
+        </div>
+    </div>
+  </div>
+</ion-content>
+
+
+<!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<section class="hero-section">
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <p class="card__category">Category</p>
+        <h3 class="card__heading">Example Card Heading</h3>
+      </div>
+    </a>
+  <div>
+</section>-->

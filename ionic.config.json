@@ -1,0 +1,7 @@
+{
+  "name": "apli",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

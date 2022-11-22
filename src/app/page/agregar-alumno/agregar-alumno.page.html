@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>agregar alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+        <ion-item>
+          <ion-label position="">Run</ion-label>
+          <ion-input [(ngModel)]="alumno.run"
+                     [(ngModel)]="datos.pass"></ion-input>
+        </ion-item>
+
+      <ion-item>
+        <ion-label position="">Nombre:</ion-label>
+        <ion-input [(ngModel)]="alumno.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="">Apellido:</ion-label>
+        <ion-input [(ngModel)]="alumno.apellido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="">correo:</ion-label>
+        <ion-input  [(ngModel)]="alumno.correo"
+                    [(ngModel)]="datos.correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button (click)="agregar()">Grabar</ion-button>
+        <ion-button [routerLink]="['/home']">Volver</ion-button>
+        <ion-button (click)="limpiar()" >limpiar</ion-button>
+      </ion-item>
+</ion-content>

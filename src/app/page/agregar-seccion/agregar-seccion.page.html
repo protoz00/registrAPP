@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agrefar Sección</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="">Nombre Sección</ion-label>
+    <ion-input [(ngModel)]="seccion.nombre"></ion-input>
+  </ion-item>
+<ion-list>
+  
+  <ion-item >
+    <ion-label >Curso:</ion-label>
+    <ion-select [(ngModel)]="seccion.id_curso" class="justify-content-center" interface="popover" placeholder="seleccione" >
+      <ion-select-option [value]="curso.id" *ngFor = "let curso of lista_curso">{{curso.alias}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+<ion-item >
+  <ion-label >Alumno:</ion-label>
+  <ion-select [(ngModel)]="seccion.id_alumno" class="justify-content-center" interface="popover" placeholder="seleccione" >
+    <ion-select-option [value]="alumno.id" *ngFor = "let alumno of lista_alumno">{{alumno.nombre}} {{alumno.apellido}}</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-item >
+  <ion-label >Profesor:</ion-label>
+  <ion-select [(ngModel)]="seccion.id_profesor" class="justify-content-center" interface="popover" placeholder="seleccione" >
+    <ion-select-option [value]="profesor.id" *ngFor = "let profesor of lista_prof"> {{profesor.nombre}} {{profesor.apellido}}</ion-select-option>    
+  </ion-select>
+</ion-item>
+</ion-list>
+
+<ion-item>
+  <ion-button (click)="agregar()">Grabar</ion-button>
+  <ion-button [routerLink]="['/home']">Volver</ion-button>
+  <ion-button (click)="limpiar()" >Limpiar</ion-button>
+</ion-item>
+</ion-content>
