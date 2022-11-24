@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/servicios/data.service';
 
 @Component({
   selector: 'app-qr',
@@ -7,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class QRPage implements OnInit {
-  public myAngularxQrCode: string = null;
-
-  constructor() { 
-    this.myAngularxQrCode = 'Your QR code data string';
+  
+  clase : any;
+  constructor(private data:DataService) { 
+    this.data.$getObjectSource.subscribe(data => this.clase = data)
+    console.log(this.clase)
+    this.clase = JSON.stringify(this.clase)
+    this.myAngularxQrCode = this.clase;
   }
-
+  public myAngularxQrCode: String = null;
   ngOnInit() {
+    
+    
   }
-
+  
 }

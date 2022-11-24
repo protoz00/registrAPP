@@ -1,23 +1,16 @@
 
-    <div class="container">
+<div class="container">
+	<div class="text">
+		<ion-card >
 
-    <div>
-		<ion-card>
-			<ion-card-header>
-			  <ion-card-title><ion-button color="dark" shape="round" expand="block">Login</ion-button></ion-card-title>
-			</ion-card-header>
-		  
 			<ion-card-content>
 				<ion-label>Usuario: </ion-label>
-				<ion-input placeholder ="Ingrese Usuario" [(ngModel)]="usuario"
-															[(ngModel)]="datos.correo"></ion-input>
-				<ion-label>Contraseña: </ion-label>
-				<ion-input type = 'password' placeholder ="Ingrese Contraseña" [(ngModel)]="pass"
-															[(ngModel)]="datos.pass"></ion-input>
-				<ion-button shape="round" fill="outline" (click)="login()">Ingresar</ion-button>
-
+					<ion-input fill="outline" placeholder ="Ingrese Usuario"[(ngModel)]="datos.correo"></ion-input>
+					<ion-label>Contraseña: </ion-label>
+					<ion-input type = 'password' placeholder ="Ingrese Contraseña"[(ngModel)]="datos.pass"></ion-input>
+					<ion-button  color="warning" shape="round"  (click)="login()">Ingresar</ion-button>
 			</ion-card-content>
 		  </ion-card>
 	</div>
-
-
+	
+</div>

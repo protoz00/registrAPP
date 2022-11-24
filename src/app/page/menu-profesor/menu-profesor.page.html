@@ -26,7 +26,7 @@
                         </ion-item>
                       
                         <div class="ion-padding" slot="content" *ngIf="profesor.id == seccion.id_profesor"  >
-                          <ion-button  expand="block" fill="outline" color="dark" (click)="la_seccion(curso.nombre_curso,seccion.nombre,curso.alias)" >{{seccion.nombre}}</ion-button>
+                          <ion-button  expand="block" fill="outline" color="dark" (click)="la_seccion(curso.nombre_curso,seccion.nombre,curso.alias,seccion.id,seccion.id_alumno)" >{{seccion.nombre}}</ion-button>
                           <!-- (click)="seccion(curso.nombre_curso,seccion.nombre,curso.alias)" -->
                         </div>
                       

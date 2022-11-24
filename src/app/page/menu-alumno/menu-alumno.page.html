@@ -3,7 +3,7 @@
   <ng-container *ngFor = "let alumno of lista_alumno">
   <ion-toolbar *ngIf="alumno.correo == datos.correo">
     <ion-title>Bienvenido/a {{alumno.nombre}} {{alumno.apellido}}</ion-title>
-    <ion-button slot="end" color="transparent" [routerLink]="['/home']">volver</ion-button>
+    <ion-button slot="end" color="transparent" [routerLink]="['/pagina1']">volver</ion-button>
   </ion-toolbar>
   </ng-container> 
 </ion-header>

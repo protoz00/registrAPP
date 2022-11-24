@@ -55,11 +55,6 @@ export class AuthComponent implements OnInit {
     })
   }
 
-
-  proceso(){
-    console.log("pincho aqui "+this.usuario+" "+this.pass);
-
-  }
   async login(){
     const res =this.auth.login(this.datos.correo, this.datos.pass).catch( error =>{
       console.log(error)

@@ -27,6 +27,8 @@ export class MenuProfesorPage implements OnInit {
     alias_curso : '',
     nombre_curso: '',
     nombre_seccion : '',
+    id : '',
+    id_alumno : ''
    }  
    datos : any;
   ngOnInit() {
@@ -53,11 +55,13 @@ export class MenuProfesorPage implements OnInit {
     
   
   }
-la_seccion(nombre_curso:any,nombre_seccion:any,curso_alias:any){
+la_seccion(nombre_curso:any,nombre_seccion:any,curso_alias:any,seccion_id:any,id_alumno:any){
   this.router.navigate(['/seccion'])
   this.datos_seccion.nombre_curso = nombre_curso
   this.datos_seccion.nombre_seccion = nombre_seccion
   this.datos_seccion.alias_curso = curso_alias
+  this.datos_seccion.id = seccion_id
+  this.datos_seccion.id_alumno = id_alumno
   console.log(this.datos_seccion)
   this.data.sendObjectSource(this.datos_seccion);
   
