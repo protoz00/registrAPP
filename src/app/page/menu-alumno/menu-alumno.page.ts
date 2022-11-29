@@ -4,7 +4,7 @@ import { AlumnoI } from 'src/app/Models/model-alumno';
 import { SeccionI } from 'src/app/Models/seccion';
 import { DataService } from 'src/app/servicios/data.service';
 import { MetodosService } from 'src/app/servicios/metodos.service';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 
 
@@ -19,7 +19,8 @@ export class MenuAlumnoPage implements OnInit {
     image:string;
   
   constructor(private metodo : MetodosService,
-              private data : DataService) { 
+              private data : DataService,
+              private barcodeScanner: BarcodeScanner) { 
  }
   
   datos : any ;
@@ -44,8 +45,12 @@ export class MenuAlumnoPage implements OnInit {
     })
   }
 
-
-  
+  scan(){
+    this.barcodeScanner.scan().then
+    (barcodedata => {
+      console.log(barcodedata.text);
+    })
+  }
   
 
 
