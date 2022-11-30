@@ -39,7 +39,7 @@
         </ion-card>
   </div>
   <div>
-    <ion-button shape="round"  expand="block" fill="outline" color="dark" style="padding-left: 20%; padding-right: 20%;" (click)="scan()">Unirse a clase</ion-button>
+    <ion-button shape="round" [routerLink]="['/camara']" expand="block" fill="outline" color="dark" style="padding-left: 20%; padding-right: 20%;" >Unirse a clase</ion-button>
   </div>
   <div>
     <ion-button shape="round" [routerLink]="['/pagina1']" expand="block" fill="outline" color="success" style="padding-left: 20%; padding-right: 20%; margin-top: 15px;">Cerrar Sesión</ion-button>

@@ -14,9 +14,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 //libreria qr
 //import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { QRCodeModule } from 'angularx-qrcode';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { ComponentsModule } from './components/components.module';
-
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
@@ -29,8 +28,8 @@ import { ComponentsModule } from './components/components.module';
 
 
   
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-                , BarcodeScanner],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },BarcodeScanner
+     ,],
   bootstrap: [AppComponent],
   
   
