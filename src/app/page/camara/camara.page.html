@@ -1,15 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title></ion-title>
+    <ion-title> Camara</ion-title>
     <ion-button slot="end" color="transparent" [routerLink]="['/menu-alumno']">volver</ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [style.visibility]="content_visibility" >
   
-  <div *ngIf = "data" > 
-    <ion-label>{{data}}</ion-label>
-  </div>
+  <ion-button 
+  expand="block" 
+  class="ion-margin"
+  (click)="startScan()">
+  Scan QR Code
+</ion-button>
 
-  <ion-button style="margin : 40%; border: shape;" (click)="startScan()">Escanear</ion-button>
+<ion-item *ngIf="scannedResult">
+  <ion-label class="ion-text-wrap">Registrado correctamente !</ion-label>
+</ion-item>
 </ion-content>

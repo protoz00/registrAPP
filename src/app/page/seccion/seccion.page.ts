@@ -28,7 +28,7 @@ export class SeccionPage implements OnInit {
     hora:'',
     id_alumno:'',
     id_seccion:'',
-    estado:'Ausente'
+    estado:''
 
   }  
   lista_alumnos : AlumnoI[];

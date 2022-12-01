@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
-
-
+import { MetodosService } from 'src/app/servicios/metodos.service';
+import { DataService } from 'src/app/servicios/data.service';
+import { AlumnoI } from 'src/app/Models/model-alumno';
 
 @Component({
   selector: 'app-camara',
@@ -11,15 +12,20 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 })
 export class CamaraPage implements OnInit {
 
-  image:string
+  image: string
+  datos: any 
+  constructor(private metodo : MetodosService,
+              private data : DataService ) {
+                
+               }
 
-  constructor() { }
-  data: any
   scannedResult: any;
   content_visibility = '';
-
+  lista_alumno : AlumnoI[];
   ngOnInit() {
-    this.checkPermission()
+   this.checkPermission();
+   this.data.$getObjectSource.subscribe(data => this.datos = data )
+   this.listar();
   }
   async checkPermission() {
     try {
@@ -34,24 +40,43 @@ export class CamaraPage implements OnInit {
       console.log(e);
     }
   }
+  async listar(){
+    this.metodo.listarAlumnos().subscribe(resp => {
+      this.lista_alumno = resp;
+    })
+  }
 
   async startScan() {
     try {
+      document.querySelector('body').classList.add('scanner-active');
       const permission = await this.checkPermission();
       if(!permission) {
         return;
       }
       await BarcodeScanner.hideBackground();
-      document.querySelector('body').classList.add('scanner-active');
+      document.body.style.background = "transparent";
       this.content_visibility = 'hidden';
       const result = await BarcodeScanner.startScan();
       console.log(result);
       BarcodeScanner.showBackground();
       document.querySelector('body').classList.remove('scanner-active');
       this.content_visibility = '';
+
       if(result?.hasContent) {
         this.scannedResult = result.content;
+        for(let alumno of this.lista_alumno){
+          if(alumno.correo == this.datos.correo ){
+            var id = alumno.id;
+            var collection = this.scannedResult
+            var data_json = JSON.parse(collection)
+            data_json.id_alumno = id;
+            data_json.estado = 'presente'
+            this.metodo.grabarClase(data_json)
+            console.log('alumno registrado')
+          }
+        }
         console.log(this.scannedResult);
+
       }
     } catch(e) {
       console.log(e);
@@ -60,7 +85,7 @@ export class CamaraPage implements OnInit {
   }
 
   stopScan() {
-    BarcodeScanner.showBackground();
+   BarcodeScanner.showBackground();
     BarcodeScanner.stopScan();
     document.querySelector('body').classList.remove('scanner-active');
     this.content_visibility = '';
