@@ -6,6 +6,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  
+  <div *ngIf = "data" > 
+    <ion-label>{{data}}</ion-label>
+  </div>
 
-
+  <ion-button style="margin : 40%; border: shape;" (click)="startScan()">Escanear</ion-button>
 </ion-content>

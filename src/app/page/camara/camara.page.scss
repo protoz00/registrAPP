@@ -2,3 +2,8 @@ ion-content.background{
 
     background-color: transparent;
   }
+
+  body.scanner-active {
+    --background: transparent;
+    --ion-background-color: transparent;
+  }
