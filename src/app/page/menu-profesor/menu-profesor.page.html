@@ -16,6 +16,7 @@
               <ion-accordion-group *ngFor="let curso of lista_curso">
                 <ng-container *ngFor="let profesor of lista_profesor">
                   <ng-container *ngFor="let seccion of lista_seccion"> 
+                    <ng-container >
                     <ng-container *ngIf="curso.id == seccion.id_curso && profesor.correo == datos.correo && seccion.id_profesor == profesor.id">
                 
                     <ion-accordion value="" >
@@ -32,6 +33,7 @@
                       
                     </ion-accordion>
                   </ng-container>
+                </ng-container>
                 </ng-container>
               </ng-container>
             </ion-accordion-group>

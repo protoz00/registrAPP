@@ -6,7 +6,7 @@ export interface ClaseI {
     id?:string;
     fecha:any;
     hora:any;
-    id_alumno : AlumnoI["id"];
-    id_seccion : SeccionI["id"];
+    id_alumno : string;
+    id_seccion : string;
     estado : string;
 }

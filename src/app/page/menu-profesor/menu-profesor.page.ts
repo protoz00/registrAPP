@@ -5,6 +5,7 @@ import { SeccionI } from 'src/app/Models/seccion';
 import { MetodosService } from 'src/app/servicios/metodos.service';
 import { DataService } from 'src/app/servicios/data.service';
 import { Router } from '@angular/router';
+import { AlumnoI } from 'src/app/Models/model-alumno';
 
 
 @Component({
@@ -40,6 +41,7 @@ export class MenuProfesorPage implements OnInit {
   lista_seccion: SeccionI[];
   lista_profesor : ProfesorI[];
   seccion_data : any;
+  lista_alumno : AlumnoI[];
 
 
   async listar(){
@@ -51,6 +53,9 @@ export class MenuProfesorPage implements OnInit {
     })
     this.metodo.listarProfesor().subscribe(resp =>{
       this.lista_profesor = resp;
+    })
+    this.metodo.listarAlumnos().subscribe(resp =>{
+      this.lista_alumno = resp;
     })
     
   

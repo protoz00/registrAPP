@@ -35,7 +35,7 @@ export class AuthComponent implements OnInit {
     correo: '',
     pass : ''
   }
-
+ 
 
   ngOnInit() {
     this.listar()
